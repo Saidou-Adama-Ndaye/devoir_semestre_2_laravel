@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryStoreRequest;
+use App\Http\Requests\CategoryUpdateRequest;
 use App\Models\Category;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
@@ -69,9 +70,10 @@ class CategoryController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $category = Category::whereSlug($slug)->first();
+        return view('backend.pages.category.edit', compact('category'));
     }
 
     /**
@@ -81,9 +83,17 @@ class CategoryController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryUpdateRequest $request, $slug)
     {
-        //
+        $category = Category::whereSlug($slug)->first();
+        $category->update([
+            'title' => $request->title,
+            'slug' => Str::slug($request->title),
+            'is_active' => $request->filled('is_active'),
+        ]);
+
+        Toastr::info('Data Updated Successfully!');
+        return redirect()->route('category.index');
     }
 
     /**
@@ -92,8 +102,10 @@ class CategoryController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        //
+        $category = Category::whereSlug($slug)->first()->delete();
+        Toastr::error('Data Deleted Successfully!');
+        return redirect()->route('category.index');
     }
 }
