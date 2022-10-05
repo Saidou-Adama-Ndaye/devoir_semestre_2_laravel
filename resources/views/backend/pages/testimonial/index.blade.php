@@ -32,9 +32,9 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Last Modified</th>
+                        <th scope="col">Client Image</th>
                         <th scope="col">Client Name</th>
                         <th scope="col">Client Designation</th>
-                        <th scope="col">Client Image</th>
                         <th scope="col">Options</th>
                     </tr>
                     </thead>
@@ -43,9 +43,13 @@
                         <tr>
                             <th scope="row">{{ $testimonials->firstItem()+$loop->index }}</th>
                             <td>{{ $testimonial->updated_at->format('d M Y') }}</td>
+                            <td>
+                                <img src="{{ asset('uploads/testimonials') }}/{{ $testimonial->client_image }}" alt=""
+                                     class="img-fluid rounded-circle">
+                            </td>
                             <td>{{ $testimonial->client_name }}</td>
                             <td>{{ $testimonial->client_designation }}</td>
-                            <td>{{ $testimonial->client_image }}</td>
+
                             <td>
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button"
@@ -56,8 +60,9 @@
                                                href="{{ route('testimonial.edit', $testimonial->client_name_slug) }}">
                                                 <i class="fas fa-edit"></i>Edit</a></li>
                                         <li>
-                                            <form action="{{ route('testimonial.destroy', $testimonial->client_name_slug) }}"
-                                                  method="post">
+                                            <form
+                                                action="{{ route('testimonial.destroy', $testimonial->client_name_slug) }}"
+                                                method="post">
                                                 @csrf
                                                 @method('delete')
                                                 <button class="dropdown-item" id="sweetAlert" type="submit">
