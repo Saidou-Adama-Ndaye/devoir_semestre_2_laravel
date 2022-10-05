@@ -14,7 +14,7 @@ class HomeController extends Controller
         $categories = Category::where('is_active', 1)
             ->latest('id')
             ->limit(5)
-            ->select('id', 'title', 'slug')
+            ->select('id', 'title', 'slug', 'category_image')
             ->get();
 
         $testimonials = Testimonial::where('is_active', 1)

@@ -45,7 +45,7 @@
                             <td>{{ $testimonial->updated_at->format('d M Y') }}</td>
                             <td>
                                 <img src="{{ asset('uploads/testimonials') }}/{{ $testimonial->client_image }}" alt=""
-                                     class="img-fluid rounded-circle">
+                                     class="img-fluid rounded h-40 w-40">
                             </td>
                             <td>{{ $testimonial->client_name }}</td>
                             <td>{{ $testimonial->client_designation }}</td>
