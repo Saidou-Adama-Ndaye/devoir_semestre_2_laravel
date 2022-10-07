@@ -113,7 +113,7 @@ class CategoryController extends Controller
         $category = Category::whereSlug($slug)->first();
 
         if ($category->category_image) {
-            $photo_location = 'uploads/category/'.$category->category_image;
+            $photo_location = 'uploads/category/' . $category->category_image;
             unlink($photo_location);
         }
 
