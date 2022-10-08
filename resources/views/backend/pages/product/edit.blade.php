@@ -185,6 +185,20 @@
                                 </div>
                                 <!-- Product Image Section -->
 
+                                <!-- Product Multiple Image Section -->
+                                <div class="col-12 mb-3">
+                                    <label for="product-multiple-image">Product Multiple Image</label>
+                                    <input type="file" name="product_multiple_image[]" multiple
+                                           data-default-file="{{ asset('uploads/products') }}/{{$product->product_multiple_image}}"
+                                           class="form-control" id="dropify1">
+                                    @error('product_multiple_image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <!-- Product Multiple Image Section -->
+
                                 <div class="col-6 mb-3 form-check form-switch">
                                     <input type="checkbox" name="is_active" class="form-check-input" role="switch"
                                            id="activeStatus"
@@ -217,5 +231,6 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         $('#dropify').dropify();
+        $('#dropify1').dropify();
     </script>
 @endpush

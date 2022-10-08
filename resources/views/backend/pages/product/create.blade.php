@@ -39,8 +39,8 @@
                                 </select>
                                 @error('category_id')
                                 <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                             <!-- Category Id Section -->
@@ -53,8 +53,8 @@
                                        placeholder="Enter product name">
                                 @error('product_name')
                                 <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                                 <!-- Product Name Section -->
 
@@ -67,8 +67,8 @@
                                                id="product-price">
                                         @error('product_price')
                                         <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                                            <strong>{{ $message }}</strong>
+                                        </span>
                                         @enderror
                                     </div>
 
@@ -79,8 +79,8 @@
                                                placeholder="Enter a unique product code">
                                         @error('product_code')
                                         <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                                            <strong>{{ $message }}</strong>
+                                        </span>
                                         @enderror
                                     </div>
                                 </div>
@@ -95,8 +95,8 @@
                                                id="product-price">
                                         @error('product_stock')
                                         <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                                            <strong>{{ $message }}</strong>
+                                        </span>
                                         @enderror
                                     </div>
                                     <div class="col-5">
@@ -106,8 +106,8 @@
                                                placeholder="Enter a unique product code">
                                         @error('alert_quantity')
                                         <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
+                                            <strong>{{ $message }}</strong>
+                                        </span>
                                         @enderror
                                     </div>
                                 </div>
@@ -121,8 +121,8 @@
                                               id="short_description" cols="30" rows="5"></textarea>
                                     @error('short_description')
                                     <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                     @enderror
                                 </div>
                                 <!-- Product Short Description -->
@@ -135,8 +135,8 @@
                                               id="long_description" cols="30" rows="5"></textarea>
                                     @error('long_description')
                                     <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                     @enderror
                                 </div>
                                 <!-- Product Long Description -->
@@ -149,8 +149,8 @@
                                               id="additional_info" cols="30" rows="5"></textarea>
                                     @error('additional_info')
                                     <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                     @enderror
                                 </div>
                                 <!-- Product Additional info Description -->
@@ -161,11 +161,23 @@
                                     <input type="file" name="product_image" class="form-control" id="dropify">
                                     @error('product_image')
                                     <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                     @enderror
                                 </div>
                                 <!-- Product Image Section -->
+
+                                <!-- Product Multiple Image Section -->
+                                <div class="col-12 mb-3">
+                                    <label for="product-multiple-image">Product Multiple Image</label>
+                                    <input type="file" class="form-control" name="product_multiple_image[]" multiple>
+                                    @error('product_multiple_image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <!-- Product Multiple Image Section -->
 
                                 <div class="col-6 mb-3 form-check form-switch">
                                     <input type="checkbox" name="is_active" class="form-check-input" role="switch"
