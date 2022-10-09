@@ -5,8 +5,8 @@
             <div class="row">
                 <div class="col-md-6 col-12">
                     <ul class="d-flex header-contact">
-                        <li><i class="fa fa-phone"></i> +01 123 456 789</li>
-                        <li><i class="fa fa-envelope"></i> youremail@gmail.com</li>
+                        <li><i class="fa fa-phone"></i><a href="tel:01714-845488">01714-845488</a></li>
+                        <li><i class="fa fa-envelope"></i><a href="mailto:samiul.islam.unisel@gmail.com">samiul.islam.unisel@gmail.com</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6 col-12">
@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-7 col-sm-6 col-6">
                     <div class="logo">
-                        <a href="index.html">
+                        <a href="{{ route('home') }}">
                             <img src="{{ asset('assets/frontend') }}/images/logo.png" alt="">
                         </a>
                     </div>
@@ -41,29 +41,29 @@
                 <div class="col-lg-7 d-none d-lg-block">
                     <nav class="mainmenu">
                         <ul class="d-flex">
-                            <li class="active"><a href="index.html">Home</a></li>
+                            <li class="active"><a href="{{ route('home') }}">Home</a></li>
                             <li><a href="about.html">About</a></li>
                             <li>
                                 <a href="javascript:void(0);">Shop <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown_style">
-                                    <li><a href="shop.html">Shop Page</a></li>
-                                    <li><a href="single-product.html">Product Details</a></li>
+                                    <li><a href="{{ route('shop.page') }}">Shop Page</a></li>
+{{--                                    <li><a href="single-product.html">Product Details</a></li>--}}
                                     <li><a href="cart.html">Shopping cart</a></li>
                                     <li><a href="checkout.html">Checkout</a></li>
                                     <li><a href="wishlist.html">Wishlist</a></li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="javascript:void(0);">Pages <i class="fa fa-angle-down"></i></a>
-                                <ul class="dropdown_style">
-                                    <li><a href="about.html">About Page</a></li>
-                                    <li><a href="single-product.html">Product Details</a></li>
-                                    <li><a href="cart.html">Shopping cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                </ul>
-                            </li>
+{{--                            <li>--}}
+{{--                                <a href="javascript:void(0);">Pages <i class="fa fa-angle-down"></i></a>--}}
+{{--                                <ul class="dropdown_style">--}}
+{{--                                    <li><a href="about.html">About Page</a></li>--}}
+{{--                                    <li><a href="single-product.html">Product Details</a></li>--}}
+{{--                                    <li><a href="cart.html">Shopping cart</a></li>--}}
+{{--                                    <li><a href="checkout.html">Checkout</a></li>--}}
+{{--                                    <li><a href="wishlist.html">Wishlist</a></li>--}}
+{{--                                    <li><a href="faq.html">FAQ</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
                             <li>
                                 <a href="javascript:void(0);">Blog <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown_style">
