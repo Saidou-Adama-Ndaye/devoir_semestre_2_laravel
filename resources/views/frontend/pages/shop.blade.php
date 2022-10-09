@@ -42,7 +42,7 @@
                                                 <li><a data-toggle="modal" data-target="#exampleModalCenter"
                                                        href="javascript:void(0);"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="{{ route('product_detail.page', ['product_slug' => $product->slug]) }}"><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -84,7 +84,7 @@
                                                     <li><a data-toggle="modal" data-target="#exampleModalCenter"
                                                            href="javascript:void(0);"><i class="fa fa-eye"></i></a></li>
                                                     <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                                    <li><a href="{{ route('product_detail.page', ['product_slug' => $c_product->slug]) }}"><i class="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
