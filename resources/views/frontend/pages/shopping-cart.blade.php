@@ -36,7 +36,11 @@
                                         <div class="inc qtybutton">+</div>
                                     </td>
                                     <td class="total">৳ {{ $item->price * $item->qty }}</td>
-                                    <td class="remove"><i class="fa fa-times"></i></td>
+                                    <td class="remove">
+                                        <a href="{{ route('remove_from_cart', ['cart_id' => $item->rowId]) }}">
+                                        <i class="fa fa-remove"></i>
+                                        </a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -45,9 +49,9 @@
                             <div class="col-xl-4 col-lg-5 col-md-6 ">
                                 <div class="cartcupon-wrap">
                                     <ul class="d-flex">
-                                        <li>
-                                            <button>Update Cart</button>
-                                        </li>
+{{--                                        <li>--}}
+{{--                                            <button>Update Cart</button>--}}
+{{--                                        </li>--}}
                                         <li><a href="{{ route('shop.page') }}">Continue Shopping</a></li>
                                     </ul>
                                     <h3>Cupon</h3>

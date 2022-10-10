@@ -55,7 +55,7 @@
                         <p>{{ $product->short_description }}</p>
                         <ul class="input-style">
 
-                            <form action="{{ route('add_to_cart.page') }}" method="post">
+                            <form action="{{ route('add_to_cart') }}" method="post">
                                 @csrf
                                 <input type="hidden" name="product_slug" value="{{ $product->slug }}">
                                 <li class="quantity cart-plus-minus">

@@ -6,7 +6,8 @@
                 <div class="col-md-6 col-12">
                     <ul class="d-flex header-contact">
                         <li><i class="fa fa-phone"></i><a href="tel:01714-845488">01714-845488</a></li>
-                        <li><i class="fa fa-envelope"></i><a href="mailto:samiul.islam.unisel@gmail.com">samiul.islam.unisel@gmail.com</a></li>
+                        <li><i class="fa fa-envelope"></i><a href="mailto:samiul.islam.unisel@gmail.com">samiul.islam.unisel@gmail.com</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-md-6 col-12">
@@ -47,7 +48,7 @@
                                 <a href="javascript:void(0);">Shop <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown_style">
                                     <li><a href="{{ route('shop.page') }}">Shop Page</a></li>
-{{--                                    <li><a href="single-product.html">Product Details</a></li>--}}
+                                    {{--                                    <li><a href="single-product.html">Product Details</a></li>--}}
                                     <li><a href="{{ route('cart.page') }}">Shopping cart</a></li>
                                     <li><a href="checkout.html">Checkout</a></li>
                                     <li><a href="wishlist.html">Wishlist</a></li>
@@ -81,17 +82,6 @@
                                         <i class="fa fa-times"></i>
                                     </div>
                                 </li>
-                                <li class="cart-items">
-                                    <div class="cart-img">
-                                        <img src="{{ asset('assets/frontend') }}/images/cart/3.jpg" alt="">
-                                    </div>
-                                    <div class="cart-content">
-                                        <a href="{{ route('cart.page') }}">Pure Nature Product</a>
-                                        <span>QTY : 1</span>
-                                        <p>$35.00</p>
-                                        <i class="fa fa-times"></i>
-                                    </div>
-                                </li>
                                 <li>Subtotol: <span class="pull-right">$70.00</span></li>
                                 <li>
                                     <button>Check Out</button>
@@ -101,40 +91,29 @@
                         <li>
                             <a href="javascript:void(0);"><i class="flaticon-shop"></i> <span>3</span></a>
                             <ul class="cart-wrap dropdown_style">
+
+                                @php
+                                    $carts = \Gloudemans\Shoppingcart\Facades\Cart::content();
+                                    $total_price = \Gloudemans\Shoppingcart\Facades\Cart::subtotal();
+                                @endphp
+
+                                @foreach($carts as $item)
                                 <li class="cart-items">
                                     <div class="cart-img">
-                                        <img src="{{ asset('assets/frontend') }}/images/cart/1.jpg" alt="">
+                                        <img src="{{ asset('uploads/products') }}/{{ $item->options->product_image }}" class="img-fluid rounded" style="width: 80px;" alt="">
                                     </div>
                                     <div class="cart-content">
-                                        <a href="{{ route('cart.page') }}">Pure Nature Product</a>
-                                        <span>QTY : 1</span>
-                                        <p>$35.00</p>
-                                        <i class="fa fa-times"></i>
+                                        <a href="{{ route('cart.page') }}">{{ $item->name }}</a>
+                                        <span>QTY : {{ $item->qty }}</span>
+                                        <p>৳ {{ $item->qty * $item->price }}</p>
+                                        <a href="{{ route('remove_from_cart', ['cart_id' => $item->rowId]) }}">
+                                            <i class="fa fa-remove"></i>
+                                        </a>
                                     </div>
                                 </li>
-                                <li class="cart-items">
-                                    <div class="cart-img">
-                                        <img src="{{ asset('assets/frontend') }}/images/cart/3.jpg" alt="">
-                                    </div>
-                                    <div class="cart-content">
-                                        <a href="{{ route('cart.page') }}">Pure Nature Product</a>
-                                        <span>QTY : 1</span>
-                                        <p>$35.00</p>
-                                        <i class="fa fa-times"></i>
-                                    </div>
-                                </li>
-                                <li class="cart-items">
-                                    <div class="cart-img">
-                                        <img src="{{ asset('assets/frontend') }}/images/cart/2.jpg" alt="">
-                                    </div>
-                                    <div class="cart-content">
-                                        <a href="{{ route('cart.page') }}">Pure Nature Product</a>
-                                        <span>QTY : 1</span>
-                                        <p>$35.00</p>
-                                        <i class="fa fa-times"></i>
-                                    </div>
-                                </li>
-                                <li>Subtotol: <span class="pull-right">$70.00</span></li>
+                                @endforeach
+
+                                <li>Subtotol: <span class="pull-right">৳ {{ $total_price }}</span></li>
                                 <li>
                                     <button>Check Out</button>
                                 </li>
