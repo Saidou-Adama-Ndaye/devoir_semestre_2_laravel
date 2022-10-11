@@ -9,6 +9,8 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Backend\CouponController;
+use App\Http\Controllers\Frontend\Auth\RegisterController;
+use App\Http\Controllers\Frontend\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,13 +23,24 @@ use App\Http\Controllers\Backend\CouponController;
 |
 */
 
-Route::prefix('')->group(function() {
+Route::prefix('')->group(function () {
     Route::get('/', [HomeController::class, 'home'])->name('home');
     Route::get('shop', [HomeController::class, 'shopPage'])->name('shop.page');
     Route::get('single-product/{product_slug}', [HomeController::class, 'productDetails'])->name('product_detail.page');
     Route::get('shopping-cart', [CartController::class, 'cartPage'])->name('cart.page');
     Route::post('add-to-cart', [CartController::class, 'addToCart'])->name('add_to_cart');
     Route::get('remove-from-cart/{cart_id}', [CartController::class, 'removeFromCart'])->name('remove_from_cart');
+
+    /* Authentication routes for Customer/Guest */
+    Route::get('register', [RegisterController::class, 'registerPage'])->name('register.page');
+    Route::post('register', [RegisterController::class, 'registerStore'])->name('register.store');
+    Route::get('login', [RegisterController::class, 'loginPage'])->name('login.page');
+    Route::post('login', [RegisterController::class, 'loginStore'])->name('login.store');
+
+    Route::prefix('customer/')->middleware('auth')->group(function () {
+        Route::get('dashboard', [CustomerController::class, 'dashboard'])->name('customer.dashboard');
+        Route::get('logout', [RegisterController::class, 'logout'])->name('customer.logout');
+    });
 });
 
 /*Admin Auth Routes*/
