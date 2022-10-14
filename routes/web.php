@@ -40,6 +40,9 @@ Route::prefix('')->group(function () {
     Route::prefix('customer/')->middleware(['auth', 'is_customer'])->group(function () {
         Route::get('dashboard', [CustomerController::class, 'dashboard'])->name('customer.dashboard');
         Route::get('logout', [RegisterController::class, 'logout'])->name('customer.logout');
+        /* Coupon apply & remove */
+        Route::post('cart/coupon-apply', [CartController::class, 'couponApply'])->name('coupon.apply');
+        Route::get('cart/coupon-remove/{coupon_name}', [CartController::class, 'couponRemove'])->name('coupon.remove');
     });
 });
 

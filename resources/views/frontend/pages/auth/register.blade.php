@@ -47,8 +47,8 @@
                             @enderror
 
                             <p>Confirm Password <span class="text-danger">*</span></p>
-                            <input type="password" name="confirm_password"
-                                   class="form-control @error('confirm_password') is-invalid @enderror">
+                            <input type="password" name="password_confirmation"
+                                   class="form-control @error('password_confirmation') is-invalid @enderror">
                             @error('confirm_password')
                             <span class="invalid-feedback" role="alert">
                                 {{ $message }}
