@@ -51,9 +51,6 @@
                         <div class="col-xl-4 col-lg-5 col-md-6 ">
                             <div class="cartcupon-wrap">
                                 <ul class="d-flex">
-                                    {{--                                        <li>--}}
-                                    {{--                                            <button>Update Cart</button>--}}
-                                    {{--                                        </li>--}}
                                     <li><a href="{{ route('shop.page') }}">Continue Shopping</a></li>
                                 </ul>
                                 <h3>Cupon</h3>
@@ -89,7 +86,7 @@
                                         <li><span class="pull-left"> Total: </span>৳ {{ $total_price }}</li>
                                     @endif
                                 </ul>
-                                <a href="checkout.html">Proceed to Checkout</a>
+                                <a href="{{ route('checkout.page') }}">Proceed to Checkout</a>
                             </div>
                         </div>
                     </div>

@@ -3,10 +3,11 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="breadcrumb-wrap text-center text-white">
+                <div class="breadcrumb-wrap text-center">
                     <h2>{{ $page_name }} Page</h2>
-                    <ul class="text-white">
-                        <li><a href="{{ route('home') }}">Home</a> / <span>{{ $page_name }}</span></li>
+                    <ul>
+                        <li><a href="{{ route('home') }}">Home</a></li>
+                        <li><span>{{ $page_name }}</span></li>
                     </ul>
                 </div>
             </div>
@@ -14,3 +15,4 @@
     </div>
 </div>
 <!-- breadcrumb-area end -->
+

@@ -6,7 +6,7 @@
                 <div class="col-md-6 col-12">
                     <ul class="d-flex header-contact">
                         <li><i class="fa fa-phone"></i><a href="tel:01714-845488">01714-845488</a></li>
-                        <li><i class="fa fa-envelope"></i><a href="mailto:samiul.islam.unisel@gmail.com">samiul.islam.unisel@gmail.com</a>
+                        <li><i class="fa fa-envelope"></i><a href="mailto:info@devsajib.com">info@devsajib.com</a>
                         </li>
                     </ul>
                 </div>
@@ -14,10 +14,12 @@
                     <ul class="d-flex account_login-area">
                         @auth
                             <li>
-                                <a href="javascript:void(0);"><i class="fa fa-user"></i> {{ \Illuminate\Support\Facades\Auth::user()->name }} <i class="fa fa-angle-down"></i></a>
+                                <a href="javascript:void(0);"><i
+                                        class="fa fa-user"></i> {{ \Illuminate\Support\Facades\Auth::user()->name }} <i
+                                        class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown_style">
                                     <li><a href="{{ route('cart.page') }}">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="{{ route('checkout.page') }}">Checkout</a></li>
                                     <li><a href="wishlist.html">wishlist</a></li>
                                     <li><a href="{{ route('customer.logout') }}">Logout</a></li>
                                 </ul>
@@ -51,9 +53,8 @@
                                 <a href="javascript:void(0);">Shop <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown_style">
                                     <li><a href="{{ route('shop.page') }}">Shop Page</a></li>
-                                    {{--<li><a href="single-product.html">Product Details</a></li>--}}
                                     <li><a href="{{ route('cart.page') }}">Shopping cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="{{ route('checkout.page') }}">Checkout</a></li>
                                     <li><a href="wishlist.html">Wishlist</a></li>
                                 </ul>
                             </li>
@@ -120,7 +121,11 @@
 
                                 <li>Subtotol: <span class="pull-right">৳ {{ $total_price }}</span></li>
                                 <li>
-                                    <button>Check Out</button>
+                                    <form action="{{ route('checkout.page') }}" method="post">
+                                        @csrf
+                                        @method('get')
+                                        <button type="submit">Check Out</button>
+                                    </form>
                                 </li>
                             </ul>
                         </li>
@@ -150,7 +155,7 @@
                                 <ul aria-expanded="false">
                                     <li><a href="{{ route('shop.page') }}">Shop Page</a></li>
                                     <li><a href="{{ route('cart.page') }}">Shopping cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="{{ route('checkout.page') }}">Checkout</a></li>
                                     <li><a href="wishlist.html">Wishlist</a></li>
                                 </ul>
                             </li>
@@ -159,7 +164,7 @@
                                 <ul aria-expanded="false">
                                     <li><a href="about.html">About Page</a></li>
                                     <li><a href="{{ route('cart.page') }}">Shopping cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="{{ route('checkout.page') }}">Checkout</a></li>
                                     <li><a href="wishlist.html">Wishlist</a></li>
                                     <li><a href="faq.html">FAQ</a></li>
                                 </ul>

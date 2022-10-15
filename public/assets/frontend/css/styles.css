@@ -16,9 +16,9 @@
     5. modal
     8. banner-area start
     6. subscribe-area start
-    7. testmonial-area start
+    7. testimonial-area start
     8. footer-area start
-    9. mobal-subscribe
+    9. modal-subscribe
     10. home2 start
     11. home3 start
     12. product-style start
@@ -1743,32 +1743,32 @@ margin-left: 15px;
 }
 /*------home3 end------*/
 
-.breadcumb-wrap h2 {
+.breadcrumb-wrap h2 {
     font-size: 30px;
     font-weight: 700;
     margin-bottom: 5px;
     color:#fff;
 }
 
-.breadcumb-wrap ul li {
+.breadcrumb-wrap ul li {
     display: inline-block;
     padding: 0px 5px;
     color:#fff;
 }
-.breadcumb-wrap ul li a{
+.breadcrumb-wrap ul li a{
   color:#fff;
 }
-.breadcumb-wrap ul li a:hover{
+.breadcrumb-wrap ul li a:hover{
   color:#ef4836;
 }
 
-.breadcumb-wrap ul li:after {
+.breadcrumb-wrap ul li:after {
     content: "/";
     position: relative;
     left: 7px;
 }
 
-.breadcumb-wrap ul li:last-child:after {
+.breadcrumb-wrap ul li:last-child:after {
     display: none;
 }
 
