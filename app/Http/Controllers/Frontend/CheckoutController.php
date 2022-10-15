@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\OrderStoreRequest;
 use App\Models\District;
 use App\Models\Upazila;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -24,7 +25,7 @@ class CheckoutController extends Controller
         return response()->json($upazilas, 200);
     }
 
-    public function placeOrder(Request $request)
+    public function placeOrder(OrderStoreRequest $request)
     {
         dd($request->all());
     }
