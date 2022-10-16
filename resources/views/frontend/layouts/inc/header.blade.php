@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-6 col-12">
                     <ul class="d-flex header-contact">
-                        <li><i class="fa fa-phone"></i><a href="tel:01714-845488">01714-845488</a></li>
+                        <li><i class="fa fa-phone"></i><a href="tel:01714-845488">+880 1714-845488</a></li>
                         <li><i class="fa fa-envelope"></i><a href="mailto:info@devsajib.com">info@devsajib.com</a>
                         </li>
                     </ul>

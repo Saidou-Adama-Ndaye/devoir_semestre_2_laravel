@@ -13,6 +13,8 @@ use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Frontend\Auth\RegisterController;
 use App\Http\Controllers\Frontend\CustomerController;
 use App\Http\Controllers\Frontend\CheckoutController;
+use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\BackendCustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,7 +63,7 @@ Route::prefix('')->group(function () {
     });
 });
 
-/*Admin Auth Routes*/
+/* Admin Auth Routes */
 Route::prefix('admin/')->group(function () {
     Route::get('login', [LoginController::class, 'loginPage'])->name('admin.loginpage');
     Route::post('login', [LoginController::class, 'login'])->name('admin.login');
@@ -69,12 +71,15 @@ Route::prefix('admin/')->group(function () {
     Route::middleware(['auth', 'is_admin'])->group(function () {
         Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
         Route::get('logout', [LoginController::class, 'logout'])->name('admin.logout');
-    });
 
-    /* Resource Controller */
-    Route::resource('category', CategoryController::class);
-    Route::resource('testimonial', TestimonialController::class);
-    Route::resource('products', ProductController::class);
-    Route::resource('coupon', CouponController::class);
+        /* Resource Controller */
+        Route::resource('category', CategoryController::class);
+        Route::resource('testimonial', TestimonialController::class);
+        Route::resource('products', ProductController::class);
+        Route::resource('coupon', CouponController::class);
+
+        Route::get('order-list', [OrderController::class, 'index'])->name('admin.orderlist');
+        Route::get('customer-list', [BackendCustomerController::class, 'index'])->name('admin.customerlist');
+    });
 });
-/*Admin Auth Routes*/
+/* Admin Auth Routes */

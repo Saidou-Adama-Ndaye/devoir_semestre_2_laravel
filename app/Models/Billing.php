@@ -9,4 +9,14 @@ class Billing extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function upazila()
+    {
+        return $this->hasOne(Upazila::class, 'id', 'upazila_id');
+    }
+
+    public function district()
+    {
+        return $this->hasOne(District::class, 'id', 'district_id');
+    }
 }
