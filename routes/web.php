@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Order;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
@@ -51,6 +52,12 @@ Route::prefix('')->group(function () {
         /* Checkout Page */
         Route::get('checkout', [CheckoutController::class, 'checkoutPage'])->name('checkout.page');
         Route::post('placeorder', [CheckoutController::class, 'placeOrder'])->name('placeorder');
+
+        /* Invoice Preview */
+        Route::get('email', function () {
+            $order = Order::whereId(4)->with(['billing', 'orderDetails'])->get();
+            return view('frontend.mail.confirm-purchase', ['order_details' => $order]);
+        });
     });
 });
 
