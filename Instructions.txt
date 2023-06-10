@@ -1,0 +1,23 @@
+1) composer install	=> (installer les dépendaces)
+
+2) php artisan key:generate	=> (générer la clé unique du projet)
+
+3) cp .env.example .env	=> (cette commande crée un fichier .env pour vous et vous allez créer la base de donnée)
+
+4) php artisan migrate	=> (faire les migrations)
+
+5) php artisan migrate:fresh - -seed	=> (cette commande exécute tous les seeders)
+
+6) php artisan serve	=> (exécuter le projet)
+
+
+Répérer les lignes suivantes dans le fichier .env et donner ces même valeurs:
+MAIL_MAILER=smtp
+MAIL_HOST=localhost
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="${APP_NAME}"
+

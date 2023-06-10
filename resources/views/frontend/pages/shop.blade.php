@@ -15,7 +15,7 @@
                     <div class="product-menu">
                         <ul class="nav justify-content-center">
                             <li>
-                                <a class="active" data-toggle="tab" href="#all">All product</a>
+                                <a class="active" data-toggle="tab" href="#all">Tous nos produits</a>
                             </li>
 
                             @foreach($categories as $category)

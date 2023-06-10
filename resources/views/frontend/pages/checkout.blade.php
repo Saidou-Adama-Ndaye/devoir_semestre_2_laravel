@@ -18,10 +18,10 @@
                     @csrf
                     <div class="col-lg-8">
                         <div class="checkout-form form-style">
-                            <h3>Billing Details</h3>
+                            <h3>Détails de facturation</h3>
                             <div class="row">
                                 <div class="col-sm-6 col-12">
-                                    <label for="full-name">Full Name *</label>
+                                    <label for="full-name">Nom Complet *</label>
                                     <input type="text" name="name"
                                            class="form-control @error('name') is-invalid @enderror">
                                     @error('name')
@@ -31,7 +31,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-sm-6 col-12">
-                                    <label for="email">Email Address *</label>
+                                    <label for="email">Adreese courrier *</label>
                                     <input type="email" name="email"
                                            class="form-control @error('email') is-invalid @enderror">
                                     @error('email')
@@ -41,7 +41,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-sm-6 col-12">
-                                    <label for="email">Phone No. *</label>
+                                    <label for="email">Numero Tel. *</label>
                                     <input type="tel" name="phone"
                                            class="form-control @error('phone') is-invalid @enderror">
                                     @error('phone')
@@ -51,22 +51,22 @@
                                     @enderror
                                 </div>
                                 <div class="col-sm-6 col-12">
-                                    <label for="district">District *</label>
+                                    <label for="district">Régions *</label>
                                     <select name="district_id" id="district_id" class="form-select">
-                                        <option value="1">Select a district</option>
+                                        <option value="1">Selectionner une région</option>
                                         @foreach($districts as $district)
                                             <option value="{{ $district->id }}">{{ $district->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="col-sm-6 col-12">
-                                    <label for="district">Upazila *</label>
+                                    <label for="district">Arrondissement *</label>
                                     <select name="upazila_id" id="upazila_id" class="form-select">
-                                        <option value="1">Select a upazila</option>
+                                        <option value="1">Selectionner un arrondissement</option>
                                     </select>
                                 </div>
                                 <div class="col-sm-6 col-12">
-                                    <label for="address">Your Address *</label>
+                                    <label for="address">Votre adresse *</label>
                                     <input type="text" name="address"
                                            class="form-control @error('address') is-invalid @enderror"
                                            placeholder="Enter your address">
@@ -77,34 +77,34 @@
                                     @enderror
                                 </div>
                                 <div class="col-12">
-                                    <label for="order-note">Order Notes </label>
-                                    <textarea name="order_note" placeholder="Notes about your Order or Delivery"></textarea>
+                                    <label for="order-note">Notes de commande </label>
+                                    <textarea name="order_note" placeholder="Notes concernant la commande ou la livraison"></textarea>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="order-area">
-                            <h3>Your Order</h3>
+                            <h3>Votre commande</h3>
                             <ul class="total-cost">
                                 @foreach($carts as $item)
-                                <li>{{ $item->name }} x {{ $item->qty }}<span class="pull-right"><strong>৳ {{ $item->price * $item->qty }}</strong></span></li>
+                                <li>{{ $item->name }} x {{ $item->qty }}<span class="pull-right"><strong> {{ $item->price * $item->qty }} FCFA</strong></span></li>
                                 @endforeach
                                     @if(Session::has('coupon'))
-                                        <li>Discount <span class="pull-right"><strong> (-) ৳ {{ Session::get('coupon')['discount_amount'] }}</strong></span></li>
-                                        <li>Total<span class="pull-right">৳ {{ Session::get('coupon')['balance'] }} <del class="text-danger">৳ {{ Session::get('coupon')['cart_total'] }}</del></span></li>
+                                        <li>Réduction <span class="pull-right"><strong> (-)  {{ Session::get('coupon')['discount_amount'] }} FCFA</strong></span></li>
+                                        <li>Total<span class="pull-right"> {{ Session::get('coupon')['balance'] }} FCFA <del class="text-danger"> {{ Session::get('coupon')['cart_total'] }} FCFA</del></span></li>
                                     @else
-                                        <li>Subtotal <span class="pull-right"><strong>৳ {{ $total_price }}</strong></span></li>
-                                        <li>Total<span class="pull-right">৳ {{ $total_price }}</span></li>
+                                        <li>Subtotal <span class="pull-right"><strong> {{ $total_price }} FCFA</strong></span></li>
+                                        <li>Total<span class="pull-right"> {{ $total_price }} FCFA</span></li>
                                     @endif
                             </ul>
                             <ul class="payment-method">
                                 <li>
                                     <input id="delivery" type="checkbox">
-                                    <label for="delivery">Cash on Delivery</label>
+                                    <label for="delivery">Payer à la livraison</label>
                                 </li>
                             </ul>
-                            <button>Place Order</button>
+                            <button>Passer la commande</button>
                         </div>
                     </div>
                 </div>

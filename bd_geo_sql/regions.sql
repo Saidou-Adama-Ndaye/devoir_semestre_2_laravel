@@ -1,5 +1,5 @@
 -- Création de la table "regions"
-CREATE TABLE `districts` (
+CREATE TABLE regions (
   id INT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   population INT,
@@ -7,7 +7,7 @@ CREATE TABLE `districts` (
 );
 
 -- Insertions dans la table "regions"
-INSERT INTO districts (id, name, population, area)
+INSERT INTO regions (id, name, population, area)
 VALUES
   (1, 'Dakar', 3644825, 547),
   (2, 'Thiès', 1572815, 648),

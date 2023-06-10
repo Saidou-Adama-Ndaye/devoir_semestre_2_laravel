@@ -24,7 +24,7 @@ class CheckoutController extends Controller
     {
         $carts = Cart::content();
         $total_price = Cart::subtotal();
-        $districts = District::select('id', 'name', 'bn_name')->get();
+        $districts = District::select('id', 'name')->get();
         return view('frontend.pages.checkout', compact('carts', 'total_price', 'districts'));
     }
 

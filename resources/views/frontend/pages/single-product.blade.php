@@ -49,7 +49,7 @@
                                 @for ($i=0; $i < $product->product_rating; $i++)
                                     <li><i class="fa fa-star"></i></li>
                                 @endfor
-                                <li>(0{{ $product->product_rating }} Customer Review)</li>
+                                <li>(0{{ $product->product_rating }} Avis des clients)</li>
                             </ul>
                         </div>
                         <p>{{ $product->short_description }}</p>
@@ -62,7 +62,7 @@
                                     <input type="text" value="1" name="order_qty"/>
                                 </li>
                                 <li>
-                                    <button type="submit" class="btn btn-danger">Add to Cart</button>
+                                    <button type="submit" class="btn btn-danger">Ajouter au panier</button>
                                 </li>
                             </form>
 

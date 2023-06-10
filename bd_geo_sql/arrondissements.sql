@@ -1,16 +1,16 @@
 -- Création de la table "arrondissements"
-CREATE TABLE `upazilas` (
+CREATE TABLE arrondissements (
   id INT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  district_id INT,
+  region_id INT,
   population INT,
   area FLOAT,
-  FOREIGN KEY (district_id) REFERENCES districts(id)
+  FOREIGN KEY (region_id) REFERENCES regions(id)
 );
 
 -- Insertions dans la table "arrondissements" pour chaque région
 -- Région Dakar
-INSERT INTO upazilas (id, name, district_id, population, area)
+INSERT INTO arrondissements (id, name, region_id, population, area)
 VALUES
   (1, 'Dakar Plateau', 1, 40000, 2.5),
   (2, 'Guediawaye', 1, 288452, 10),
@@ -24,7 +24,7 @@ VALUES
   (10, 'Diamniadio', 1, 57387, 28);
 
 -- Région Thiès
-INSERT INTO upazilas (id, name, district_id, population, area)
+INSERT INTO arrondissements (id, name, region_id, population, area)
 VALUES
   (11, 'Thiès-Nord', 2, 180000, 25),
   (12, 'Thiès-Sud', 2, 154350, 35),
@@ -38,7 +38,7 @@ VALUES
   (20, 'Notto', 2, 57387, 28);
 
 -- Région Kaolack
-INSERT INTO upazilas (id, name, district_id, population, area)
+INSERT INTO arrondissements (id, name, region_id, population, area)
 VALUES
   (21, 'Guinguinéo', 3, 180000, 25),
   (22, 'Nioro du Rip', 3, 154350, 35),
@@ -51,7 +51,7 @@ VALUES
   (29, 'Fatick', 3, 57387, 28),
   (30, 'Birkelane', 3, 57387, 28);
 -- Pour la région Saint-Louis
-INSERT INTO upazilas (id, name, district_id, population, area)
+INSERT INTO arrondissements (id, name, region_id, population, area)
 VALUES
   (31, 'Saint-Louis Nord', 4, 180000, 25),
   (32, 'Saint-Louis Sud', 4, 154350, 35),
@@ -65,7 +65,7 @@ VALUES
   (40, 'Richard Toll', 4, 57387, 28);
 
 -- Pour la région Ziguinchor
-INSERT INTO upazilas (id, name, district_id, population, area)
+INSERT INTO arrondissements (id, name, region_id, population, area)
 VALUES
   (41, 'Ziguinchor Nord', 5, 180000, 25),
   (42, 'Ziguinchor Sud', 5, 154350, 35),
