@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\OrderDetails;
 use App\Models\Product;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
@@ -17,6 +18,13 @@ class HomeController extends Controller
             ->limit(5)
             ->select('id', 'title', 'slug', 'category_image')
             ->get();
+        
+        $bestSellers = Product::whereIn('id', function($query){
+            $query->select('product_id')
+                ->from('order_details')
+                ->groupBy('product_id')
+                ->havingRaw('COUNT(id) >= 2');
+        })->get();
 
         $products = Product::where('is_active', 1)
             ->latest('id')
@@ -32,7 +40,8 @@ class HomeController extends Controller
         return view('frontend.pages.home', compact(
             'categories',
             'products',
-            'testimonials'
+            'testimonials',
+            'bestSellers'
         ));
     }
 

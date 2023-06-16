@@ -26,6 +26,11 @@
 <script src="{{ asset('assets/frontend') }}/js/scripts.js"></script>
 <!-- toastr.min.js -->
 <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+
+<!-- Set countdown -->
+<script type="text/javascript">
+    $('#clock').countdown("2023/06/20");
+</script>
 {!! Toastr::message() !!}
 
 @stack('frontend_script')
