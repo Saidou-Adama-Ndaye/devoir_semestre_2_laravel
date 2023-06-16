@@ -56,6 +56,11 @@ class HomeController extends Controller
         ));
     }
 
+    public function about()
+    { 
+        return view('frontend.pages.about');
+    }
+
     public function productDetails($product_slug)
     {
         $product = Product::whereSlug($product_slug)
