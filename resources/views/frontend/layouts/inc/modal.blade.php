@@ -7,13 +7,13 @@
             </button>
             <div class="modal-body d-flex">
                 <div class="product-single-img w-50">
-                    <img src="{{ asset('assets/frontend') }}/images/product/product-details.jpg" alt="">
+                    <img src="" alt="" id="product-image">
                 </div>
                 <div class="product-single-content w-50">
-                    <h3>Pure Nature Hohey</h3>
+                    <h3 id="product-name"></h3>
                     <div class="rating-wrap fix">
-                        <span class="pull-left">$219.56</span>
-                        <ul class="rating pull-right">
+                        <span class="pull-left" id="product-price"></span>
+                        <ul class="rating pull-right" id="product-rating">
                             <li><i class="fa fa-star"></i></li>
                             <li><i class="fa fa-star"></i></li>
                             <li><i class="fa fa-star"></i></li>
@@ -22,9 +22,7 @@
                             <li>(05 Customar Review)</li>
                         </ul>
                     </div>
-                    <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and
-                        demoralized by the charms of pleasure of the moment, so blinded by desire denounce with
-                        righteous indignation</p>
+                    <p id="product-desc"></p>
                     <ul class="input-style">
                         <li class="quantity cart-plus-minus">
                             <input type="text" value="1"/>
@@ -33,8 +31,8 @@
                     </ul>
                     <ul class="cetagory">
                         <li>Categories:</li>
-                        <li><a href="#">Honey,</a></li>
-                        <li><a href="#">Olive Oil</a></li>
+                        <li><a href="#" id="product-category"></a></li>
+                        
                     </ul>
                     <ul class="socil-icon">
                         <li>Share :</li>

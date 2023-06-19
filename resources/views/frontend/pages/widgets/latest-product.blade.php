@@ -19,7 +19,7 @@
                             <div class="product-icon flex-style">
                                 <ul>
                                     <li><a data-toggle="modal" data-target="#exampleModalCenter"
-                                           href="javascript:void(0);"><i
+                                           href="javascript:void(0);" data-product="{{ json_encode($product) }}"><i
                                                 class="fa fa-eye"></i></a></li>
                                     <li><a href="wishlist.html"><i class="fa fa-heart"></i></a></li>
                                     <li><a href="{{ route('product_detail.page', ['product_slug' => $product->slug]) }}"><i class="fa fa-shopping-bag"></i></a></li>
