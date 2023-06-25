@@ -26,6 +26,28 @@
 <script src="{{ asset('assets/frontend') }}/js/scripts.js"></script>
 <!-- toastr.min.js -->
 <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+
+
+<script type="text/javascript">
+    $('#clock').countdown("2023/06/26");
+    $('#exampleModalCenter').on('show.bs.modal', function(event) {
+        var button = event.relatedTarget;
+        var productData = button.getAttribute('data-product');
+        var product = JSON.parse(productData);
+        // Utilisez la variable product comme vous le souhaitez
+        console.log(product);
+        $('#product-name').text(product.product_name);
+        $('#product-price').text('$' + product.product_price);
+        $('#product-desc').text(product.long_description);
+        $('#product-category').text(product.category);
+        $('#product-image').attr('src', "{{ asset('uploads/products') }}/" + product.product_image);
+        var starRating = '';
+        for (var i = 0; i < product.product_rating; i++) {
+            starRating += '<li><i class="fa fa-star"></i></li>';
+        }
+        $('#product-rating').html(starRating);
+    });
+</script>
 {!! Toastr::message() !!}
 
 @stack('frontend_script')
