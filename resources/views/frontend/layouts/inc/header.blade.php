@@ -44,8 +44,8 @@
                 <div class="col-lg-7 d-none d-lg-block">
                     <nav class="mainmenu">
                         <ul class="d-flex">
-                            <li class="active"><a href="{{ route('home') }}">Accueil</a></li>
-                            <li><a href="about.html">A propos</a></li>
+                            <li class="active"><a href="{{ route('home') }}">Home</a></li>
+                            <li><a href="{{ route('about.page') }}">About</a></li>
                             <li>
                                 <a href="javascript:void(0);">Restaurant <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown_style">
