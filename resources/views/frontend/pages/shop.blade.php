@@ -1,28 +1,28 @@
 @extends('frontend.layouts.master')
 
 @section('frontend_title')
-    Shop Page
+Shop Page
 @endsection
 
 @section('frontend_content')
-    @include('frontend.layouts.inc.breadcrumb', ['page_name' => 'Shop'])
+@include('frontend.layouts.inc.breadcrumb', ['page_name' => 'Shop'])
 
-    <!-- product-area start -->
-    <div class="product-area pt-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-lg-12">
-                    <div class="product-menu">
-                        <ul class="nav justify-content-center">
-                            <li>
-                                <a class="active" data-toggle="tab" href="#all">Tous nos produits</a>
-                            </li>
+<!-- product-area start -->
+<div class="product-area pt-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <div class="product-menu">
+                    <ul class="nav justify-content-center">
+                        <li>
+                            <a class="active" data-toggle="tab" href="#all">Tous nos produits</a>
+                        </li>
 
-                            @foreach($categories as $category)
-                                <li>
-                                    <a data-toggle="tab" href="#{{ $category->slug }}">{{ $category->title }}</a>
-                                </li>
-                            @endforeach
+                        @foreach($categories as $category)
+                        <li>
+                            <a data-toggle="tab" href="#{{ $category->slug }}">{{ $category->title }}</a>
+                        </li>
+                        @endforeach
 
                         </ul>
                     </div>
@@ -40,7 +40,7 @@
                                         <div class="product-icon flex-style">
                                             <ul>
                                                 <li><a data-toggle="modal" data-target="#exampleModalCenter"
-                                                       href="javascript:void(0);" data-product="{{ json_encode($product) }}"><i class="fa fa-eye" ></i></a></li>
+                                                       href="javascript:void(0);"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
                                                 <li><a href="{{ route('product_detail.page', ['product_slug' => $product->slug]) }}"><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
@@ -62,12 +62,12 @@
                         @endforeach
                     </ul>
 
-                    <div class="col-12 text-center d-flex justify-content-center">
-                        <div class="py-3">
-                            {{ $allproducts->links() }}
-                        </div>
+                <div class="col-12 text-center d-flex justify-content-center">
+                    <div class="py-3">
+                        {{ $allproducts->links() }}
                     </div>
                 </div>
+            </div>
 
                 @foreach($categories as $category)
                     <div class="tab-pane active" id="{{$category->slug}}">
@@ -82,7 +82,7 @@
                                             <div class="product-icon flex-style">
                                                 <ul>
                                                     <li><a data-toggle="modal" data-target="#exampleModalCenter"
-                                                           href="javascript:void(0);" data-product="{{ json_encode($product) }}"><i class="fa fa-eye"></i></a></li>
+                                                           href="javascript:void(0);"><i class="fa fa-eye"></i></a></li>
                                                     <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
                                                     <li><a href="{{ route('product_detail.page', ['product_slug' => $c_product->slug]) }}"><i class="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
@@ -109,5 +109,5 @@
         </div>
     </div>
 
-    <!-- product-area end -->
+<!-- product-area end -->
 @endsection

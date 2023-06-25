@@ -1,5 +1,5 @@
 -- Création de la table "arrondissements"
-CREATE TABLE `upazilas` (
+CREATE TABLE upazilas (
   id INT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   district_id INT,
