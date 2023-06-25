@@ -1,5 +1,5 @@
 -- Création de la table "regions"
-CREATE TABLE `districts` (
+CREATE TABLE districts (
   id INT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   population INT,
