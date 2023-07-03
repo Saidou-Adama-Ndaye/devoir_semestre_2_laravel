@@ -29,7 +29,7 @@
 
 <!-- Set countdown -->
 <script type="text/javascript">
-    $('#clock').countdown("2023/06/20");
+    $('#clock').countdown("2023/06/27");
 
     $('#exampleModalCenter').on('show.bs.modal', function(event) {
         var button = event.relatedTarget;
