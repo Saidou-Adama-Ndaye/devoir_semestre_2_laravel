@@ -1,7 +1,7 @@
 <!-- User Menu Start -->
 <div class="user-container d-flex">
     <a href="#" class="d-flex user position-relative" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img class="profile" alt="profile" src="{{ asset('assets/backend') }}/img/profile/profile-1.jpg" />
+        <img class="profile" alt="profile" src="{{ asset('assets/backend') }}/img/chef.png" />
         <div class="name">Admin</div>
     </a>
     <div class="dropdown-menu dropdown-menu-end user-menu wide">

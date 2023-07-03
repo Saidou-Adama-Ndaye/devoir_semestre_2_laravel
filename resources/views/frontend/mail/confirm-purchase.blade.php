@@ -144,8 +144,8 @@
 <div id="invoice">
     <div class="toolbar hidden-print">
         <div class="text-right">
-            <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Print</button>
-            <button class="btn btn-info"><i class="fa fa-file-pdf-o"></i> Export as PDF</button>
+            <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Imprimer</button>
+            <!-- <button class="btn btn-info"><i class="fa fa-file-pdf-o"></i> Export as PDF</button> -->
         </div>
         <hr>
     </div>
@@ -164,9 +164,9 @@
                                 {{ env('APP_NAME') }}
                             </a>
                         </h2>
-                        <div>Ecommerce store address</div>
-                        <div>Ecommerce store mobile number</div>
-                        <div>company@example.com</div>
+                        <div>Votre Restaurant</div>
+                        <div>Ouvert H24/7</div>
+                        <div>groupe5@groupeisi.com</div>
                     </div>
                 </div>
             </header>
@@ -174,16 +174,16 @@
                 @foreach ($order_details as $order)
                     <div class="row contacts">
                         <div class="col invoice-to">
-                            <div class="text-gray-light">INVOICE TO:</div>
+                            <div class="text-gray-light">FACTURE A:</div>
                             <h2 class="to">{{ $order->billing->name }}</h2>
                             <div class="address"> <i class="fa fa-home" aria-hidden="true"></i> {{ $order->billing->address }}</div>
                             <div class="phone"><a href="tel:{{ $order->billing->phone }}"><i class="fa fa-mobile" aria-hidden="true"></i> {{ $order->billing->phone }}</div>
                             <div class="email"><a href="mailto:{{ $order->billing->email }}"><i class="fa fa-envelope" aria-hidden="true"></i> {{ $order->billing->email }}</a></div>
                         </div>
                         <div class="col invoice-details">
-                            <h1 class="invoice-id">INVOICE 3-2-1</h1>
-                            <div class="date">Date of Invoice: {{ $order->created_at->format('d/m/Y') }}</div>
-                            <div class="date">Due Date: {{ $order->created_at->format('d/m/Y') }}</div>
+                            <h1 class="invoice-id">Facture</h1>
+                            <div class="date">Date de Facture: {{ $order->created_at->format('d/m/Y') }}</div>
+                            <div class="date">Fait le: {{ $order->created_at->format('d/m/Y') }}</div>
                         </div>
                     </div>
                     <table class="table">
@@ -191,9 +191,9 @@
                         <tr>
                             <th>#</th>
                             <th class="text-left">DESCRIPTION</th>
-                            <th class="text-right">QUANTITY</th>
-                            <th class="text-right">UNIT PRICE</th>
-                            <th class="text-right">SUBTOTAL</th>
+                            <th class="text-right">QUANTITE</th>
+                            <th class="text-right">PRIX</th>
+                            <th class="text-right">TOTAL</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -206,8 +206,8 @@
                                     </h3>
                                 </td>
                                 <td class="unit">{{ $item->product_qty }}</td>
-                                <td class="qty">৳{{ $item->product_price }}</td>
-                                <td class="total">৳{{ $item->product_qty*$item->product_price }}</td>
+                                <td class="qty">CFA {{ $item->product_price }}</td>
+                                <td class="total">CFA {{ $item->product_qty*$item->product_price }}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -215,25 +215,25 @@
                         <tr>
                             <td colspan="2"></td>
                             <td colspan="2">Discount({{ $order->coupon_name }})</td>
-                            <td>-৳{{ $order->discount_amount }}</td>
+                            <td>-CFA {{ $order->discount_amount }}</td>
                         </tr>
                         <tr>
                             <td colspan="2"></td>
                             <td colspan="2">SUBTOTAL</td>
-                            <td>৳{{ $order->total }}</td>
+                            <td>CFA {{ $order->total }}</td>
                         </tr>
                         <tr>
                             <td colspan="2"></td>
                             <td colspan="2">GRAND TOTAL</td>
-                            <td>৳{{ $order->total }}</td>
+                            <td>CFA {{ $order->total }}</td>
                         </tr>
                         </tfoot>
                     </table>
                 @endforeach
-                <div class="thanks">Thank you!</div>
+                <div class="thanks">Thank you! Dieureudieuf!</div>
             </main>
             <footer>
-                Invoice was computer generated and it's valid, signature and seal not required.
+                Facture Generée Automatiquement.
             </footer>
         </div>
         <!--DO NOT DELETE THIS div. It is responsible for showing footer always at the bottom-->

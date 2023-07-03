@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h2>Best Seller</h2>
+                    <h2>Best Seller !!</h2>
                     <img src="{{ asset('assets/frontend') }}/images/section-title.png" alt="">
                 </div>
             </div>
@@ -14,7 +14,7 @@
                 <li class="col-xl-3 col-lg-4 col-sm-6 col-12">
                     <div class="product-wrap">
                         <div class="product-img">
-                            <span>Sale</span>
+                            <span>Vente</span>
                             <img src="{{ asset('uploads/products') }}/{{ $product->product_image }}" alt="">
                             <div class="product-icon flex-style">
                                 <ul>

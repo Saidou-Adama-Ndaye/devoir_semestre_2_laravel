@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="test-title text-center">
-                    <h2>What Our client Says</h2>
+                    <h2>Ce que disent nos clients</h2>
                 </div>
             </div>
         </div>

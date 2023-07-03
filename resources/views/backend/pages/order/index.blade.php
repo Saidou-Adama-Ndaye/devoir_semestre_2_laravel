@@ -79,7 +79,7 @@
                                                                         <strong>Total Payable Amount:</strong>
                                                                     </td>
                                                                     <td><strong class="fw-bold text-danger">
-                                                                            ৳{{ $order->total }}</strong></td>
+                                                                            CFA {{ $order->total }}</strong></td>
                                                                 </tr>
                                                                 <tr class="mt-5">
                                                                     <td colspan="50">

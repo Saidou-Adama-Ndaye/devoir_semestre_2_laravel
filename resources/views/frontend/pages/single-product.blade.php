@@ -44,7 +44,7 @@
                     <div class="product-single-content">
                         <h3>{{ $product->product_name }}</h3>
                         <div class="rating-wrap fix">
-                            <span class="pull-left">৳ {{ $product->product_price }}</span>
+                            <span class="pull-left">CFA {{ $product->product_price }}</span>
                             <ul class="rating pull-right">
                                 @for ($i=0; $i < $product->product_rating; $i++)
                                     <li><i class="fa fa-star"></i></li>
@@ -88,7 +88,7 @@
                         <ul class="nav">
                             <li><a class="active" data-toggle="tab" href="#description">Description</a></li>
                             <li><a data-toggle="tab" href="#tag">Faq</a></li>
-                            <li><a data-toggle="tab" href="#review">Review</a></li>
+                            <li><a data-toggle="tab" href="#review">Revue</a></li>
                         </ul>
                     </div>
                 </div>
@@ -348,7 +348,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title text-left">
-                        <h2>Related Product</h2>
+                        <h2>Autres Produits</h2>
                     </div>
                 </div>
             </div>
@@ -365,7 +365,7 @@
                                         <h3>
                                             <a href="{{ route('product_detail.page', ['product_slug' => $r_product->slug]) }}">{{ $r_product->product_name }}</a>
                                         </h3>
-                                        <p>৳ {{ $r_product->product_price }}</p>
+                                        <p>CFA {{ $r_product->product_price }}</p>
                                     </div>
                                     <div class="col-5 text-right">
                                         <ul>

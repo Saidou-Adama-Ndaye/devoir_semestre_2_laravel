@@ -40,7 +40,7 @@ Shop Page
                                         <div class="product-icon flex-style">
                                             <ul>
                                                 <li><a data-toggle="modal" data-target="#exampleModalCenter"
-                                                       href="javascript:void(0);"><i class="fa fa-eye"></i></a></li>
+                                                       href="javascript:void(0);" data-product="{{ json_encode($product) }}"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
                                                 <li><a href="{{ route('product_detail.page', ['product_slug' => $product->slug]) }}"><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
@@ -50,7 +50,7 @@ Shop Page
                                         <h3>
                                             <a href="{{ route('product_detail.page', ['product_slug' => $product->slug]) }}">{{ $product->product_name }}</a>
                                         </h3>
-                                        <p class="pull-left">৳ {{ $product->product_price }}</p>
+                                        <p class="pull-left">CFA {{ $product->product_price }}</p>
                                         <ul class="pull-right d-flex">
                                             @for($i=0; $i < $product->product_rating; $i++)
                                                 <li><i class="fa fa-star"></i></li>
@@ -82,7 +82,7 @@ Shop Page
                                             <div class="product-icon flex-style">
                                                 <ul>
                                                     <li><a data-toggle="modal" data-target="#exampleModalCenter"
-                                                           href="javascript:void(0);"><i class="fa fa-eye"></i></a></li>
+                                                           href="javascript:void(0);" data-product="{{ json_encode($c_product) }}" ><i class="fa fa-eye"></i></a></li>
                                                     <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
                                                     <li><a href="{{ route('product_detail.page', ['product_slug' => $c_product->slug]) }}"><i class="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
@@ -92,7 +92,7 @@ Shop Page
                                             <h3>
                                                 <a href="{{ route('product_detail.page', ['product_slug' => $c_product->slug]) }}">{{ $c_product->product_name }}</a>
                                             </h3>
-                                            <p class="pull-left">৳ {{ $c_product->product_price }}</p>
+                                            <p class="pull-left">CFA {{ $c_product->product_price }}</p>
                                             <ul class="pull-right d-flex">
                                                 @for($i=0; $i < $c_product->product_rating; $i++)
                                                     <li><i class="fa fa-star"></i></li>

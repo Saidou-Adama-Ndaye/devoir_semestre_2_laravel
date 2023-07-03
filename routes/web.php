@@ -29,6 +29,8 @@ use App\Http\Controllers\Backend\BackendCustomerController;
 
 Route::prefix('')->group(function () {
     Route::get('/', [HomeController::class, 'home'])->name('home');
+    Route::get('about', [HomeController::class, 'aboutPage'])->name('about');
+    Route::get('contact', [HomeController::class, 'contactPage'])->name('contact');
     Route::get('shop', [HomeController::class, 'shopPage'])->name('shop.page');
     Route::get('single-product/{product_slug}', [HomeController::class, 'productDetails'])->name('product_detail.page');
     Route::get('shopping-cart', [CartController::class, 'cartPage'])->name('cart.page');

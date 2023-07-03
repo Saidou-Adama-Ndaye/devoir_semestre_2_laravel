@@ -24,12 +24,14 @@
 <script src="{{ asset('assets/frontend') }}/js/jquery-ui.min.js"></script>
 <!-- main js -->
 <script src="{{ asset('assets/frontend') }}/js/scripts.js"></script>
+
+<script src="{{ asset('assets/frontend') }}/js/main.js"></script>
 <!-- toastr.min.js -->
 <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 
 <!-- Set countdown -->
 <script type="text/javascript">
-    $('#clock').countdown("2023/06/27");
+    $('#clock').countdown("2023/07/4");
 
     $('#exampleModalCenter').on('show.bs.modal', function(event) {
         var button = event.relatedTarget;
@@ -38,7 +40,7 @@
         // Utilisez la variable product comme vous le souhaitez
         console.log(product);
         $('#product-name').text(product.product_name);
-        $('#product-price').text('$' + product.product_price);
+        $('#product-price').text('CFA ' + product.product_price);
         $('#product-desc').text(product.long_description);
         $('#product-category').text(product.category);
         $('#product-image').attr('src', "{{ asset('uploads/products') }}/"+ product.product_image);

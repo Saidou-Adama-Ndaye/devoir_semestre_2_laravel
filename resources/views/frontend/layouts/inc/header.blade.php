@@ -17,6 +17,7 @@
                             <a href="javascript:void(0);"><i class="fa fa-user"></i> {{ \Illuminate\Support\Facades\Auth::user()->name }} <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown_style">
                                 <li><a href="{{ route('cart.page') }}">Panier</a></li>
+                                <li><a href="{{ route('customer.dashboard') }}">Dashboard</a></li>
                                 <li><a href="{{ route('checkout.page') }}">Paiement</a></li>
                                 <li><a href="{{ route('customer.logout') }}">Deconnexion</a></li>
                             </ul>
@@ -24,7 +25,7 @@
                         @endauth
                         @guest
                         <li><a href="{{ route('login.page') }}">Login</a></li>
-                        <li><a href="{{ route('register.page') }}">Register</a></li>
+                        <li><a href="{{ route('register.page') }}">Inscription</a></li>
                         @endguest
                     </ul>
                 </div>
@@ -45,7 +46,7 @@
                     <nav class="mainmenu">
                         <ul class="d-flex">
                             <li class="active"><a href="{{ route('home') }}">Accueil</a></li>
-                            <li><a href="about.html">A propos</a></li>
+                            <li><a href="{{ route('about') }}">A propos</a></li>
                             <li>
                                 <a href="javascript:void(0);">Restaurant <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown_style">
@@ -55,7 +56,7 @@
                                     <li><a href="wishlist.html">Wishlist</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="{{ route('contact') }}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -63,27 +64,19 @@
                     <ul class="search-cart-wrapper d-flex">
                         <li class="search-tigger"><a href="javascript:void(0);"><i class="flaticon-search"></i></a></li>
                         <li>
-                            <a href="javascript:void(0);"><i class="flaticon-like"></i> <span>2</span></a>
+                            <a href="javascript:void(0);"><i class="flaticon-like"></i> <span>+</span></a>
                             <ul class="cart-wrap dropdown_style">
                                 <li class="cart-items">
-                                    <div class="cart-img">
-                                        <img src="{{ asset('assets/frontend') }}/images/cart/1.jpg" alt="">
-                                    </div>
-                                    <div class="cart-content">
-                                        <a href="{{ route('cart.page') }}">Pure Nature Product</a>
-                                        <span>QTY : 1</span>
-                                        <p>$35.00</p>
-                                        <i class="fa fa-times"></i>
-                                    </div>
+                                    
                                 </li>
-                                <li>Subtotol: <span class="pull-right">$70.00</span></li>
+                                
                                 <li>
-                                    <button>Check Out</button>
+                                    <button>Valider</button>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="javascript:void(0);"><i class="flaticon-shop"></i> <span>3</span></a>
+                            <a href="javascript:void(0);"><i class="flaticon-shop"></i> <span>+</span></a>
                             <ul class="cart-wrap dropdown_style">
 
                                 @php
@@ -99,7 +92,7 @@
                                     <div class="cart-content">
                                         <a href="{{ route('cart.page') }}">{{ $item->name }}</a>
                                         <span>QTY : {{ $item->qty }}</span>
-                                        <p>৳ {{ $item->qty * $item->price }}</p>
+                                        <p>CFA {{ $item->qty * $item->price }}</p>
                                         <a href="{{ route('remove_from_cart', ['cart_id' => $item->rowId]) }}">
                                             <i class="fa fa-remove"></i>
                                         </a>
@@ -107,12 +100,12 @@
                                 </li>
                                 @endforeach
 
-                                <li>Subtotol: <span class="pull-right">৳ {{ $total_price }}</span></li>
+                                <li>Subtotol: <span class="pull-right">CFA {{ $total_price }}</span></li>
                                 <li>
                                     <form action="{{ route('checkout.page') }}" method="post">
                                         @csrf
                                         @method('get')
-                                        <button type="submit">Check Out</button>
+                                        <button type="submit">Valider</button>
                                     </form>
                                 </li>
                             </ul>
@@ -137,7 +130,7 @@
                     <div class="col-12 d-block d-lg-none">
                         <ul class="metismenu">
                             <li><a href="{{ route('home') }}">Home</a></li>
-                            <li><a href="about.html">About</a></li>
+                            <li><a href="{{ route('about') }}">About</a></li>
                             <li class="sidemenu-items">
                                 <a class="has-arrow" aria-expanded="false" href="javascript:void(0);">Shop </a>
                                 <ul aria-expanded="false">
@@ -150,21 +143,15 @@
                             <li class="sidemenu-items">
                                 <a class="has-arrow" aria-expanded="false" href="javascript:void(0);">Pages </a>
                                 <ul aria-expanded="false">
-                                    <li><a href="about.html">About Page</a></li>
+                                    <li><a href="{{ route('about') }}">About Page</a></li>
                                     <li><a href="{{ route('cart.page') }}">Shopping cart</a></li>
                                     <li><a href="{{ route('checkout.page') }}">Checkout</a></li>
                                     <li><a href="wishlist.html">Wishlist</a></li>
                                     <li><a href="faq.html">FAQ</a></li>
                                 </ul>
                             </li>
-                            <li class="sidemenu-items">
-                                <a class="has-arrow" aria-expanded="false" href="javascript:void(0);">Blog</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">Contact</a></li>
+                        
+                            <li><a href="{{ route('contact') }}">Contact</a></li>
                         </ul>
                     </div>
                 </div>

@@ -10,8 +10,7 @@
                                 <div class="slider-content">
                                     <div class="slider-shape">
                                         <h2 data-swiper-parallax="-500">Découvrez nos délicieuse pizzas aux saveurs variées</h2>
-                                        <p data-swiper-parallax="-400">Contrary to popular belief, Lorem Ipsum is not
-                                            simply random text. It has roots in a piece of classical Latin</p>
+                                        <p data-swiper-parallax="-400">Pizzaa Mozzarellaaaa !!!</p>
                                         <a href="{{ route('shop.page') }}" data-swiper-parallax="-300">Shop Now</a>
                                     </div>
                                 </div>
@@ -28,8 +27,7 @@
                                 <div class="slider-content">
                                     <div class="slider-shape">
                                         <h2 data-swiper-parallax="-500">Découvrez nos burgers et hambergers</h2>
-                                        <p data-swiper-parallax="-400">Contrary to popular belief, Lorem Ipsum is not
-                                            simply random text. It has roots in a piece of classical Latin</p>
+                                        <p data-swiper-parallax="-400">1 Burger Achete == 1 Burger Achete :)</p>
                                         <a href="{{ route('shop.page') }}" data-swiper-parallax="-300">Shop Now</a>
                                     </div>
                                 </div>
@@ -46,8 +44,7 @@
                                 <div class="slider-content">
                                     <div class="slider-shape">
                                         <h2 data-swiper-parallax="-500">Découvrez nos différents sandwichs</h2>
-                                        <p data-swiper-parallax="-400">Contrary to popular belief, Lorem Ipsum is not
-                                            simply random text. It has roots in a piece of classical Latin</p>
+                                        <p data-swiper-parallax="-400">Sandiss !!!</p>
                                         <a href="{{ route('shop.page') }}" data-swiper-parallax="-300">Shop Now</a>
                                     </div>
                                 </div>

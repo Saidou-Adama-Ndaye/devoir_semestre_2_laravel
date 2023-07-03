@@ -2,10 +2,10 @@
 <div class="logo position-relative">
     <a href="Dashboard.html">
         <!-- Logo can be added directly -->
-        <!-- <img src="img/logo/logo-white.svg" alt="logo" /> -->
+        <img src="{{asset('assets/frontend')}}/images/image.png" alt="logo" />
 
         <!-- Or added via css to provide different ones for different color themes -->
-        <div class="img"></div>
+        <!-- <div class="img"></div> -->
     </a>
 </div>
 <!-- Logo End -->

@@ -28,7 +28,7 @@ class HomeController extends Controller
 
         $products = Product::where('is_active', 1)
             ->latest('id')
-            ->select('id', 'product_name', 'slug', 'product_price', 'product_stock', 'product_rating', 'product_image')
+            ->select('id', 'product_name', 'slug', 'product_price', 'long_description', 'product_stock', 'product_rating', 'product_image')
             ->paginate(8);
 
         $testimonials = Testimonial::where('is_active', 1)
@@ -49,7 +49,7 @@ class HomeController extends Controller
     {
         $allproducts = Product::where('is_active', 1)
             ->latest('id')
-            ->select('id', 'product_name', 'slug', 'product_price', 'product_stock', 'product_rating', 'product_image')
+            ->select('id', 'product_name', 'slug', 'product_price', 'long_description', 'product_stock', 'product_rating', 'product_image')
             ->paginate(12);
 
         $categories = Category::where('is_active', 1)
@@ -72,9 +72,19 @@ class HomeController extends Controller
         ->first();
 
         $related_products = Product::whereNot('slug', $product_slug)
-            ->select('id', 'product_name', 'slug', 'product_price', 'product_image')
+            ->select('id', 'product_name', 'slug', 'long_description', 'product_price', 'product_image')
             ->limit(4)
             ->get();
         return view('frontend.pages.single-product', compact('product', 'related_products'));
+    }
+
+    public function aboutPage()
+    {
+        return view('frontend.pages.about');
+    }
+
+    public function contactPage()
+    {
+        return view('frontend.pages.contact');
     }
 }

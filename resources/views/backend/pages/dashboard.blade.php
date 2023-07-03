@@ -26,7 +26,7 @@
                 <div class="dropdown-as-select me-3" data-setactive="false" data-childselector="span">
                     <a class="pe-0 pt-0 align-top lh-1 dropdown-toggle" href="#" data-bs-toggle="dropdown"
                        aria-expanded="false" aria-haspopup="true">
-                        <span class="small-title">Analytics Report</span>
+                        <span class="small-title">Rapport analytiques</span>
                     </a>
                 </div>
             </div>
@@ -48,9 +48,9 @@
                                     </svg>
                                 </div>
                                 <div class="mb-1 d-flex align-items-center text-alternate text-small lh-1-25">
-                                    EARNINGS
+                                    GAINS
                                 </div>
-                                <div class="text-primary cta-4">৳ {{ $total_earnings }}</div>
+                                <div class="text-primary cta-4">CFA {{ $total_earnings }}</div>
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                                     </svg>
                                 </div>
                                 <div class="mb-1 d-flex align-items-center text-alternate text-small lh-1-25">
-                                    ORDERS
+                                    COMMANDES
                                 </div>
                                 <div class="text-primary cta-4">{{ $total_orders }}</div>
                             </div>
@@ -111,7 +111,7 @@
                                     </svg>
                                 </div>
                                 <div class="mb-1 d-flex align-items-center text-alternate text-small lh-1-25">
-                                    PRODUCTS
+                                    PRODUITS
                                 </div>
                                 <div class="text-primary cta-4">{{ $total_products }}</div>
                             </div>
@@ -133,7 +133,7 @@
                                     </svg>
                                 </div>
                                 <div class="mb-1 d-flex align-items-center text-alternate text-small lh-1-25">
-                                    USERS
+                                    CLIENTS
                                 </div>
                                 <div class="text-primary cta-4">{{ $total_customers }}</div>
                             </div>
@@ -153,7 +153,7 @@
                                     </svg>
                                 </div>
                                 <div class="mb-1 d-flex align-items-center text-alternate text-small lh-1-25">
-                                    COMMENTS
+                                    COMMENTAIRES
                                 </div>
                                 <div class="text-primary cta-4">5</div>
                             </div>
@@ -166,13 +166,13 @@
     <!-- order section start -->
     <div class="row">
         <div class="col-lg-8 col-md-8 col-sm-12">
-            <h1>Order List Table</h1>
+            <h1>Liste des Commandes</h1>
             <div class="table-responsive my-2">
                 <table class="table table-hover" id="dataTable">
                     <thead class="text-primary">
                     <th>#</th>
-                    <th>View Details</th>
-                    <th>Order Date</th>
+                    <th>Voir Details</th>
+                    <th>Date</th>
                     <th>Subtotal (BDT)</th>
                     <th>Discount (BDT)</th>
                     <th>Total (BDT)</th>
@@ -183,7 +183,7 @@
                             <td> {{ $loop->index+1 }} </td>
                             <td>
                                 <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-                                        data-bs-target="#modal{{ $order->id }}">Order Details
+                                        data-bs-target="#modal{{ $order->id }}">Details Commandes
                                 </button>
                                 <div class="modal fade" id="modal{{ $order->id }}" tabindex="-1" role="dialog"
                                      aria-labelledby="modal{{ $order->id }}Title" aria-hidden="true">
@@ -206,9 +206,9 @@
                                                                 <thead class="thead-inverse">
                                                                 <tr>
                                                                     <th>#</th>
-                                                                    <th>Product Name</th>
-                                                                    <th>Quantity</th>
-                                                                    <th>Unit Price</th>
+                                                                    <th>Nom Produit</th>
+                                                                    <th>Quantite</th>
+                                                                    <th>Prix</th>
                                                                     <th>Subtotal</th>
                                                                 </tr>
                                                                 </thead>
@@ -227,16 +227,16 @@
                                                                         <strong>Total Payable Amount:</strong>
                                                                     </td>
                                                                     <td><strong class="fw-bold text-danger">
-                                                                            ৳{{ $order->total }}</strong></td>
+                                                                            cfa{{ $order->total }}</strong></td>
                                                                 </tr>
                                                                 <tr class="mt-5">
                                                                     <td colspan="50">
                                                                         <p class="text-primary">Billing Address:</p>
-                                                                        <p>Recipient: {{ $order->billing->name }}</p>
+                                                                        <p>Recipiendaire: {{ $order->billing->name }}</p>
                                                                         <p>Contact: {{ $order->billing->phone }}</p>
                                                                         <p>Address: {{ $order->billing->address }}</p>
-                                                                        <p>Upazila: {{ $order->billing->upazila->name }}
-                                                                            District: {{ $order->billing->district->name }}</p>
+                                                                        <p>District: {{ $order->billing->upazila->name }}
+                                                                            Region: {{ $order->billing->district->name }}</p>
                                                                     </td>
                                                                 </tr>
                                                                 </tbody>
@@ -247,7 +247,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                                    Close
+                                                    Fermer
                                                 </button>
                                             </div>
                                         </div>
