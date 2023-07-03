@@ -30,6 +30,7 @@ use App\Http\Controllers\Backend\BackendCustomerController;
 Route::prefix('')->group(function () {
 
     Route::get('about', [HomeController::class, 'about'])->name('about.page');
+    Route::get('contact', [HomeController::class, 'contact'])->name('contact.page');
 
     Route::get('/', [HomeController::class, 'home'])->name('home');
     Route::get('shop', [HomeController::class, 'shopPage'])->name('shop.page');

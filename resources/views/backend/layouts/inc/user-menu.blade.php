@@ -14,13 +14,13 @@
                     <li>
                         <a href="#">
                             <i data-cs-icon="gear" class="me-2" data-cs-size="17"></i>
-                            <span class="align-middle">Settings</span>
+                            <span class="align-middle">Paramètres</span>
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('admin.logout') }}">
                             <i data-cs-icon="logout" class="me-2" data-cs-size="17"></i>
-                            <span class="align-middle">Logout</span>
+                            <span class="align-middle">Déconnexion</span>
                         </a>
                     </li>
                 </ul>

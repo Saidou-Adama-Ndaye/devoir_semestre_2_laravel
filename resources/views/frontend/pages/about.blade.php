@@ -7,8 +7,6 @@
 @section('frontend_content')
 @include('frontend.layouts.inc.breadcrumb', ['page_name' => 'À propos'])
 
-php
-Copy code
 <!-- À propos start -->
 <div class="about-area pt-100">
     <div class="container">
@@ -19,8 +17,9 @@ Copy code
                     Il était une fois, dans une petite ville animée, un restaurant unique en son genre. Ce restaurant, spécialisé dans les commandes en ligne, était connu pour offrir des plats délicieux et un service exceptionnel à ses clients.
 
                     L'histoire de ce restaurant a commencé avec un chef passionné, nommé Lucas. Lucas était un véritable artiste culinaire, toujours à la recherche de nouvelles saveurs et de combinaisons uniques. Il avait une vision claire de créer un endroit où les gens pourraient savourer des plats exceptionnels sans avoir à quitter le confort de leur foyer.
-                    
-                    Avec cette vision en tête, Lucas a rassemblé une équipe de cuisiniers talentueux et dévoués. Ensemble, ils ont créé un menu varié, comprenant des plats traditionnels revisités et des créations culinaires originales. Chaque plat était préparé avec amour et attention aux détails, utilisant uniquement les ingrédients les plus frais et de la plus haute qualité.                </div>
+
+                    Avec cette vision en tête, Lucas a rassemblé une équipe de cuisiniers talentueux et dévoués. Ensemble, ils ont créé un menu varié, comprenant des plats traditionnels revisités et des créations culinaires originales. Chaque plat était préparé avec amour et attention aux détails, utilisant uniquement les ingrédients les plus frais et de la plus haute qualité.
+                </div>
             </div>
             <div class="col-lg-6">
                 <div class="about-img">
@@ -44,13 +43,13 @@ Copy code
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-team-member">
                     <div class="team-img">
                         <img src="{{ asset('assets/frontend/images/2.webp') }}" alt="Membre de l'équipe">
                     </div>
                     <div class="team-content">
-                        <h3>John Doe</h3>
+                        <h3>Elie NDONGO</h3>
                         <span>Chef cuisinier</span>
                         <ul class="team-social">
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -60,13 +59,13 @@ Copy code
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-team-member">
                     <div class="team-img">
                         <img src="{{ asset('assets/frontend/images/4.webp') }}" alt="Membre de l'équipe">
                     </div>
                     <div class="team-content">
-                        <h3>Jane Smith</h3>
+                        <h3>El Hadji Fallilou NIANG</h3>
                         <span>Serveuse</span>
                         <ul class="team-social">
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -76,13 +75,29 @@ Copy code
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-team-member">
                     <div class="team-img">
                         <img src="{{ asset('assets/frontend/images/3.webp') }}" alt="Membre de l'équipe">
                     </div>
                     <div class="team-content">
-                        <h3>David Johnson</h3>
+                        <h3>Saidou Adama NDIAYE</h3>
+                        <span>Maître d'hôtel</span>
+                        <ul class="team-social">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-team-member">
+                    <div class="team-img">
+                        <img src="{{ asset('assets/frontend/images/3.webp') }}" alt="Membre de l'équipe">
+                    </div>
+                    <div class="team-content">
+                        <h3>Tussil HERBILOT</h3>
                         <span>Maître d'hôtel</span>
                         <ul class="team-social">
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -98,7 +113,7 @@ Copy code
 <!-- Notre équipe end -->
 
 <!-- Contactez-nous start -->
-<div class="contact-area pt-100">
+<!-- <div class="contact-area pt-100">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -132,6 +147,6 @@ Copy code
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Contactez-nous end -->
 @endsection

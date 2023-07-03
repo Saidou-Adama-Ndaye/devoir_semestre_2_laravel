@@ -7,8 +7,8 @@
                     <div class="col-lg-12 col-12">
                         <div class="footer-top-text text-center">
                             <ul>
-                                <li><a href="{{ route('home') }}">home</a></li>
-                                <li><a href="{{ route('shop.page') }}">shop</a></li>
+                                <li><a href="{{ route('home') }}">Accueil</a></li>
+                                <li><a href="{{ route('shop.page') }}">Restaurant</a></li>
                                 <li><a href="blog.html">how to eat blog</a></li>
                                 <li><a href="contact.html">contact</a></li>
                             </ul>
@@ -40,16 +40,16 @@
                 <div class="col-lg-3 col-md-8 col-sm-12">
                     <div class="footer-adress">
                         <ul>
-                            <li><a href="#"><span>Email:</span> domain@gmail.com</a></li>
-                            <li><a href="#"><span>Tel:</span> 0131234567</a></li>
-                            <li><a href="#"><span>Adress:</span> 52 Web Bangale , Adress line2 , ip:3105</a></li>
+                            <li><a href="#"><span>Email:</span> groupe5@groupeisi.com</a></li>
+                            <li><a href="#"><span>Tel:</span> 77 777 77 77</a></li>
+                            <li><a href="#"><span>Adress:</span> KM1 Av. Cheikh Anta Diop, Dakar 28110</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12">
                     <div class="footer-reserved">
                         <ul>
-                            <li>Copyright © 2022 Ecommerce All rights reserved.</li>
+                            <li>Copyright © 2023 All rights reserved.</li>
                         </ul>
                     </div>
                 </div>

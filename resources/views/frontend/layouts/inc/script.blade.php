@@ -29,7 +29,7 @@
 
 
 <script type="text/javascript">
-    $('#clock').countdown("2023/06/26");
+    $('#clock').countdown("2023/07/10");
     $('#exampleModalCenter').on('show.bs.modal', function(event) {
         var button = event.relatedTarget;
         var productData = button.getAttribute('data-product');

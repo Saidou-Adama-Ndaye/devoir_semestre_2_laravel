@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-6 col-12">
                     <ul class="d-flex header-contact">
-                        <li><i class="fa fa-phone"></i><a href="tel:01714-845488">+221 77-777-77-77</a></li>
+                        <li><i class="fa fa-phone"></i><a href="tel:01714-845488">+221 77 777 77 77</a></li>
                         <li><i class="fa fa-envelope"></i><a href="mailto:info@devsajib.com">groupe5@groupeisi.com</a>
                         </li>
                     </ul>
@@ -23,8 +23,8 @@
                         </li>
                         @endauth
                         @guest
-                        <li><a href="{{ route('login.page') }}">Login</a></li>
-                        <li><a href="{{ route('register.page') }}">Register</a></li>
+                        <li><a href="{{ route('login.page') }}">Connexion</a></li>
+                        <li><a href="{{ route('register.page') }}">Inscription</a></li>
                         @endguest
                     </ul>
                 </div>
@@ -44,18 +44,17 @@
                 <div class="col-lg-7 d-none d-lg-block">
                     <nav class="mainmenu">
                         <ul class="d-flex">
-                            <li class="active"><a href="{{ route('home') }}">Home</a></li>
-                            <li><a href="{{ route('about.page') }}">About</a></li>
+                            <li class="active"><a href="{{ route('home') }}">Accueil</a></li>
+                            <li><a href="{{ route('about.page') }}">A propos</a></li>
                             <li>
                                 <a href="javascript:void(0);">Restaurant <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown_style">
                                     <li><a href="{{ route('shop.page') }}">Menu</a></li>
                                     <li><a href="{{ route('cart.page') }}">Mes commandes</a></li>
                                     <li><a href="{{ route('checkout.page') }}">Paiement</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="{{ route('contact.page') }}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
